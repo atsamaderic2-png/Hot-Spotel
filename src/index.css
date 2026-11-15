@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: var(--theme-primary);
+  --color-brand-elevated: var(--theme-elevated);
+  --color-brand-elevated-hover: var(--theme-elevated-hover);
+  --color-brand-border: var(--theme-border);
+  --color-brand-border-muted: var(--theme-border-muted);
+  --color-brand-border-strong: var(--theme-border-strong);
+  --color-brand-accent: var(--theme-accent);
+  --color-brand-accent-hover: var(--theme-accent-hover);
+  --color-brand-wordmark: var(--theme-accent-wordmark);
+}
+
+@layer base {
+  :root,
+  [data-theme="navy_gold"] {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --theme-primary: #071426;
+    --theme-elevated: #0E2342;
+    --theme-elevated-hover: #142F56;
+    --theme-border: #163056;
+    --theme-border-muted: #1B3B68;
+    --theme-border-strong: #23487C;
+    --theme-accent: #CA8A04;
+    --theme-accent-hover: #B8860B;
+    --theme-accent-wordmark: #A16207;
+    --theme-page-bg: #ffffff;
+  }
+
+  [data-theme="emerald_amber"] {
+    --theme-primary: #06241B;
+    --theme-elevated: #0D382B;
+    --theme-elevated-hover: #124837;
+    --theme-border: #154738;
+    --theme-border-muted: #1A5543;
+    --theme-border-strong: #236B55;
+    --theme-accent: #D97706;
+    --theme-accent-hover: #B45309;
+    --theme-accent-wordmark: #92400E;
+    --theme-page-bg: #fafaf7;
+  }
+
+  [data-theme="royal_crimson"] {
+    --theme-primary: #2D0A14;
+    --theme-elevated: #451220;
+    --theme-elevated-hover: #58192B;
+    --theme-border: #521727;
+    --theme-border-muted: #651E31;
+    --theme-border-strong: #7D263E;
+    --theme-accent: #CA8A04;
+    --theme-accent-hover: #A16207;
+    --theme-accent-wordmark: #92400E;
+    --theme-page-bg: #fffdfb;
+  }
+
+  [data-theme="obsidian_bronze"] {
+    --theme-primary: #14161D;
+    --theme-elevated: #232734;
+    --theme-elevated-hover: #2E3344;
+    --theme-border: #2C3141;
+    --theme-border-muted: #373D51;
+    --theme-border-strong: #464E67;
+    --theme-accent: #C87D0A;
+    --theme-accent-hover: #A66506;
+    --theme-accent-wordmark: #925405;
+    --theme-page-bg: #f8fafc;
+  }
+
+  html {
+    font-size: 16.5px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 17.5px;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    background-color: var(--theme-page-bg);
+    color: #0f172a;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .receipt-modal-backdrop,
+  .receipt-modal-card {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #printable-receipt,
+  #printable-receipt * {
+    visibility: visible;
+  }
+
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0;
+    padding: 20px !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Hôtel Kasbah Nour",
+  "description": "Bilingual boutique hotel booking application with dynamic room search, Orange Money and MTN MoMo payments, scannable QR receipts, receipt verification scanner, and full admin management.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
